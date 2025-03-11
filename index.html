@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Section with Slider</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+  <link href="https://unpkg.com/lucide-icons/dist/umd/lucide.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- nav -->
+  <header class="navbar">
+    <div class="nav-container">
+      <!-- Logo on the left -->
+      <div class="logo">
+        <a href="#">
+          <img src="./assets/Logo .png" alt="Furniture Logo">
+        </a>
+      </div>
+
+      <!-- Hamburger button -->
+      <button class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Main Nav -->
+      <nav class="main-nav">
+        <ul class="main-menu">
+          <li><a href="#">Home</a></li>
+          <li>
+            <a href="#">About Us</a>
+            <ul class="dropdown">
+              <li><a href="#">Why Choose Us</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Custom Orders</a></li>
+            </ul>
+          </li>
+          <li class="has-megamenu">
+            <a href="#">Collections</a>
+            <div class="mega-menu">
+              <div class="mega-column">
+                <h3>Chairs</h3>
+                <ul>
+                  <li><a href="#">Indoor chairs</a></li>
+                  <li><a href="#">Outdoor chairs</a></li>
+                  <li><a href="#">Natural rattan</a></li>
+                  <li><a href="#">Bar chair & Stools</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h3>Tables</h3>
+                <ul>
+                  <li><a href="#">Indoor Tables</a></li>
+                  <li><a href="#">Outdoor Tables</a></li>
+                  <li><a href="#">Console Tables</a></li>
+                  <li><a href="#">Side Tables</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h3>Beds</h3>
+                <ul>
+                  <li><a href="#">Minimalist Bed</a></li>
+                  <li><a href="#">Classic Bed</a></li>
+                  <li><a href="#">Rattan Bed</a></li>
+                  <li><a href="#">Poster Bed</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h3>Dining</h3>
+                <ul>
+                  <li><a href="#">Indoor Dining Set</a></li>
+                  <li><a href="#">Outdoor Dining Set</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h3>Living</h3>
+                <ul>
+                  <li><a href="#">Indoor Living Set</a></li>
+                  <li><a href="#">Outdoor Living Set</a></li>
+                  <li><a href="#">Classic Living Set</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h3>Root</h3>
+                <ul>
+                  <li><a href="#">Teak Root furniture</a></li>
+                  <li><a href="#">Sourwood furniture</a></li>
+                  <li><a href="#">Wooden Slabs</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h3>Others</h3>
+                <ul>
+                  <li><a href="#">Office Furniture</a></li>
+                  <li><a href="#">Working Table</a></li>
+                  <li><a href="#">Doors</a></li>
+                  <li><a href="#">Mirrors</a></li>
+                  <li><a href="#">Pool</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="#">Wooden House/Joglos</a>
+            <ul class="dropdown">
+              <li><a href="#">Collections</a></li>
+              <li><a href="#">Projects</a></li>
+              <li><a href="#">Architectural Rendering</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#">Our Projects</a>
+            <ul class="dropdown">
+              <li><a href="#">Hotel Projects</a></li>
+              <li><a href="#">Villa & Resort Projects</a></li>
+              <li><a href="#">Retail Store Projects</a></li>
+              <li><a href="#">Joglo Projects</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- end -->
+  <!-- Image Grid -->
+  <section class="hero-section">
+    <div class="hero-grid" id="hero-grid"></div>
+
+    <!-- Content Overlay -->
+    <div class="overlay">
+      <div class="overlay-content">
+        <!-- Text block with glassmorphic effect -->
+        <div class="overlay-text">
+          <h1>
+            Transform Your Vision
+            <span>Into Reality</span>
+          </h1>
+          <p>Innovative solutions for forward-thinking businesses</p>
+          <button class="cssbuttons-io-button">
+            Get started
+            <div class="icon">
+              <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                  fill="currentColor"></path>
+              </svg>
+            </div>
+          </button>
+
+        </div>
+        <!-- Simple image slider -->
+        <div class="image-slider">
+          <img src="./assets/dining.jpg" alt="Slide 1" class="active" />
+          <img src="./assets/pexels-d-c-dao-447174024-15456205.jpg" alt="Slide 2" />
+          <img src="./assets/slider (1).jpg" alt="Slide 3" />
+        </div>
+      </div>
+    </div>
+    <!-- Features Section -->
+    <div class="features">
+      <div class="feature-item">
+        <img src="./assets/armchair.png" alt="">
+        <p>Cozy Seating</p>
+      </div>
+      <div class="feature-item"><img src="./assets/quality-assurance.png" alt="">
+        <p>Quality Assurance</p>
+      </div>
+      <div class="feature-item"><img src="./assets/delivery.png" alt="">
+        <p>
+          On Time Delivery
+        </p>
+      </div>
+      <div class="feature-item"><img src="./assets/credit-card.png" alt="">
+        <p>Easy Payments</p>
+      </div>
+    </div>
+
+  </section>
+  <!-- section-2 -->
+
+  <div class="experience-container">
+    <div class="experience-wrapper">
+
+      <!-- Experiences Section -->
+      <section class="experiences" id="experiences-section">
+        <div class="image-container" id="experiences-image">
+          <img src="./assets/pexels-fotografiagmazg-18707990_11zon.jpg" alt="Modern living room">
+        </div>
+        <div class="text-container" id="experiences-text">
+          <h2 class="section-header">EXPERIENCES</h2>
+          <h1 class="section-title">We Provide You The Best Experience</h1>
+          <p class="section-text">
+            You don’t have to worry about the result because all of these interiors
+            are made by people who are professionals in their fields with an elegant
+            and luxurious style and with premium quality materials.
+          </p>
+          <a class="more-info" href="#">More Info →</a>
+        </div>
+      </section>
+
+      <!-- Materials Section -->
+      <section class="materials" id="materials-section">
+        <div class="text-container" id="materials-text">
+          <h2 class="section-header">MATERIALS</h2>
+          <h1 class="section-title">Very Serious Materials For Making Furniture</h1>
+          <p class="section-text">
+            Because Panto was very serious about designing furniture for our environment,<br />
+            using a very expensive and famous capital but at a relatively low price.
+          </p>
+          <a class="more-info" href="#">More Info →</a>
+        </div>
+        <div class="image-container materials" id="materials-image">
+          <div class="image-wrap">
+            <img src="./assets/dining.jpg" alt="Living room with chairs">
+            <img src="./assets/pexels-curtis-adams-1694007-3773577.jpg" alt="Minimalist living room">
+          </div>
+          <img src="./assets/pexels-heyho-7195593.jpg" class="hide-m" alt="Dining area">
+        </div>
+      </section>
+
+    </div>
+  </div>
+  <!-- Best-seller -->
+  <section class="bestsellers-section">
+    <div class="bestsellers-wrap">
+      <h2 class="bestsellers-title">Best Selling Product</h2>
+
+      <!-- Tab Menu -->
+      <div class="bestsellers-tab-menu">
+        <button class="bestsellers-tab-link active" data-tab="bestsellers-chairs">Chair</button>
+        <button class="bestsellers-tab-link" data-tab="bestsellers-beds">Beds</button>
+        <button class="bestsellers-tab-link" data-tab="bestsellers-sofa">Sofa</button>
+      </div>
+
+      <!-- Tab Contents -->
+      <!-- 1. Chairs -->
+      <div class="bestsellers-tab-content active" id="bestsellers-chairs">
+        <div class="bestsellers-card">
+          <img src="./assets/chairs (1).jpg" alt="Chair 1" />
+          <div class="bestsellers-card-content">
+            <span class="bestsellers-card-category">Chair</span>
+            <h3 class="bestsellers-card-name">Sakarias Armchair</h3>
+            <p class="bestsellers-card-desc">
+              Lorem ipsum dolor sit amet consectetur. Integer risus neque massa quam
+              ullamcorper faucibus sed pulvinar bibendum.
+            </p>
+          </div>
+        </div>
+        <div class="bestsellers-card">
+          <img src="./assets/chairs (1).jpg" alt="Chair 1" />
+          <div class="bestsellers-card-content">
+            <span class="bestsellers-card-category">Chair</span>
+            <h3 class="bestsellers-card-name">Sakarias Armchair</h3>
+            <p class="bestsellers-card-desc">
+              Lorem ipsum dolor sit amet consectetur. Integer risus neque massa quam
+              ullamcorper faucibus sed pulvinar bibendum.
+            </p>
+          </div>
+        </div>
+        <div class="bestsellers-card">
+          <img src="./assets/chairs (2).jpg" alt="Chair 2" />
+          <div class="bestsellers-card-content">
+            <span class="bestsellers-card-category">Chair</span>
+            <h3 class="bestsellers-card-name">Baltsar Chair</h3>
+            <p class="bestsellers-card-desc">
+              Lorem ipsum dolor sit amet consectetur. Integer risus neque massa quam
+              ullamcorper faucibus sed pulvinar bibendum.
+            </p>
+          </div>
+        </div>
+
+        <div class="bestsellers-card">
+          <img src="./assets/chairs (3).jpg" alt="Chair 3" />
+          <div class="bestsellers-card-content">
+            <span class="bestsellers-card-category">Chair</span>
+            <h3 class="bestsellers-card-name">Anjay Chair</h3>
+            <p class="bestsellers-card-desc">
+              Lorem ipsum dolor sit amet consectetur. Integer risus neque massa quam
+              ullamcorper faucibus sed pulvinar bibendum.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Beds -->
+      <div class="bestsellers-tab-content" id="bestsellers-beds">
+        <div class="bestsellers-card">
+          <img src="./assets/pexels-curtis-adams-1694007-3773577.jpg" alt="Bed 1" />
+          <div class="bestsellers-card-content">
+            <span class="bestsellers-card-category">Bed</span>
+            <h3 class="bestsellers-card-name">Cozy Bed</h3>
+            <p class="bestsellers-card-desc">
+              Lorem ipsum dolor sit amet consectetur. Integer risus neque massa quam
+              ullamcorper faucibus sed pulvinar bibendum.
+            </p>
+          </div>
+        </div>
+
+        <div class="bestsellers-card">
+          <img src="./assets/pexels-curtis-adams-1694007-4682144.jpg" alt="Bed 2" />
+          <div class="bestsellers-card-content">
+            <span class="bestsellers-card-category">Bed</span>
+            <h3 class="bestsellers-card-name">Cloudy Bed</h3>
+            <p class="bestsellers-card-desc">
+              Lorem ipsum dolor sit amet consectetur. Integer risus neque massa quam
+              ullamcorper faucibus sed pulvinar bibendum.
+            </p>
+          </div>
+        </div>
+
+        <div class="bestsellers-card">
+          <img src="./assets/pexels-d-c-dao-447174024-15456205.jpg" alt="Bed 2" />
+          <div class="bestsellers-card-content">
+            <span class="bestsellers-card-category">Bed</span>
+            <h3 class="bestsellers-card-name">Cloudy Bed</h3>
+            <p class="bestsellers-card-desc">
+              Lorem ipsum dolor sit amet consectetur. Integer risus neque massa quam
+              ullamcorper faucibus sed pulvinar bibendum.
+            </p>
+          </div>
+        </div>
+        <div class="bestsellers-card">
+          <img src="./assets/pexels-curtis-adams-1694007-3773577.jpg" alt="Bed 1" />
+          <div class="bestsellers-card-content">
+            <span class="bestsellers-card-category">Bed</span>
+            <h3 class="bestsellers-card-name">Cozy Bed</h3>
+            <p class="bestsellers-card-desc">
+              Lorem ipsum dolor sit amet consectetur. Integer risus neque massa quam
+              ullamcorper faucibus sed pulvinar bibendum.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Sofa -->
+      <div class="bestsellers-tab-content" id="bestsellers-sofa">
+        <div class="bestsellers-card">
+          <img src="./assets/slider (4).webp" alt="Sofa 1" />
+          <div class="bestsellers-card-content">
+            <span class="bestsellers-card-category">Sofa</span>
+            <h3 class="bestsellers-card-name">Lounge Sofa</h3>
+            <p class="bestsellers-card-desc">
+              Lorem ipsum dolor sit amet consectetur. Integer risus neque massa quam
+              ullamcorper faucibus sed pulvinar bibendum.
+            </p>
+          </div>
+        </div>
+
+        <div class="bestsellers-card">
+          <img src="./assets/sofas (1).jpg" alt="Sofa 1" />
+          <div class="bestsellers-card-content">
+            <span class="bestsellers-card-category">Sofa</span>
+            <h3 class="bestsellers-card-name">Lounge Sofa</h3>
+            <p class="bestsellers-card-desc">
+              Lorem ipsum dolor sit amet consectetur. Integer risus neque massa quam
+              ullamcorper faucibus sed pulvinar bibendum.
+            </p>
+          </div>
+        </div>
+
+        <div class="bestsellers-card">
+          <img src="./assets/sofas (2).jpg" alt="Sofa 1" />
+          <div class="bestsellers-card-content">
+            <span class="bestsellers-card-category">Sofa</span>
+            <h3 class="bestsellers-card-name">Lounge Sofa</h3>
+            <p class="bestsellers-card-desc">
+              Lorem ipsum dolor sit amet consectetur. Integer risus neque massa quam
+              ullamcorper faucibus sed pulvinar bibendum.
+            </p>
+          </div>
+        </div>
+        <div class="bestsellers-card">
+          <img src="./assets/slider (4).webp" alt="Sofa 1" />
+          <div class="bestsellers-card-content">
+            <span class="bestsellers-card-category">Sofa</span>
+            <h3 class="bestsellers-card-name">Lounge Sofa</h3>
+            <p class="bestsellers-card-desc">
+              Lorem ipsum dolor sit amet consectetur. Integer risus neque massa quam
+              ullamcorper faucibus sed pulvinar bibendum.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- "View All" Link -->
+      <div class="bestsellers-view-all-container">
+        <a href="#" class="more-info">View All →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- cta -->
+  <section class="interior-section">
+    <section class="banner">
+      <div class="banner-content">
+        <h1>Design your dream home with <br> the perfect furniture.</h1>
+        <p>We're Making It Easy For You To Find Your Perfect Match.</p>
+        <button class="cssbuttons-io-button">
+          See All Products
+          <div class="icon">
+            <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                fill="currentColor"></path>
+            </svg>
+          </div>
+        </button>
+      </div>
+      <div class="banner-image">
+        <img src="./assets/Untitled design (14) 1.png" alt="Furniture Setup">
+      </div>
+    </section>
+  </section>
+  <!-- our-creation -->
+
+  <div class="main-container">
+    <!-- Projects Header -->
+    <section class="projects-header">
+      <div class="container">
+        <div class="projects-header-content">
+          <h1 class="projects-title">
+            <span class="projects-title-main">Featured Projects</span>
+            <span class="projects-title-accent">Architectural Excellence</span>
+          </h1>
+          <p class="projects-description">
+            Transforming spaces through innovative design and masterful execution.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="projects-process">
+      <div class="container">
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="process-icon">
+              <i data-lucide="palette"></i>
+            </div>
+            <h3 class="process-title">Design Phase</h3>
+            <p class="process-description">Collaborative design process tailored to your vision</p>
+          </div>
+          <div class="process-card">
+            <div class="process-icon">
+              <i data-lucide="hammer"></i>
+            </div>
+            <h3 class="process-title">Construction</h3>
+            <p class="process-description">Expert craftsmanship with premium materials</p>
+          </div>
+          <div class="process-card">
+            <div class="process-icon">
+              <i data-lucide="timer"></i>
+            </div>
+            <h3 class="process-title">Delivery</h3>
+            <p class="process-description">Timely completion with attention to detail</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Showcase -->
+    <section class="projects-showcase">
+      <div class="container">
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&q=80&w=1600"
+                alt="Luxury Beach Resort">
+              <div class="project-overlay"></div>
+              <div class="project-content">
+                <span class="project-category">Villa & Resort Projects</span>
+                <h3 class="project-title">Luxury Beach Resort</h3>
+                <p class="project-description">Contemporary coastal elegance with sustainable design</p>
+                <button class="project-button">
+                  View Project
+                  <i data-lucide="chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&q=80&w=1600"
+                alt="Boutique Hotel">
+              <div class="project-overlay"></div>
+              <div class="project-content">
+                <span class="project-category">Hotel Projects</span>
+                <h3 class="project-title">Boutique Hotel</h3>
+                <p class="project-description">Urban sophistication meets timeless comfort</p>
+                <button class="project-button">
+                  View Project
+                  <i data-lucide="chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1604999333679-b86d54738315?auto=format&fit=crop&q=80&w=1600"
+                alt="Traditional Joglo Villa">
+              <div class="project-overlay"></div>
+              <div class="project-content">
+                <span class="project-category">Joglo Projects</span>
+                <h3 class="project-title">Traditional Joglo Villa</h3>
+                <p class="project-description">Ancient Javanese architecture with modern amenities</p>
+                <button class="project-button">
+                  View Project
+                  <i data-lucide="chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-image">
+              <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1600"
+                alt="Flagship Fashion Store">
+              <div class="project-overlay"></div>
+              <div class="project-content">
+                <span class="project-category">Retail Store Projects</span>
+                <h3 class="project-title">Flagship Fashion Store</h3>
+                <p class="project-description">Innovative retail space with immersive design</p>
+                <button class="project-button">
+                  View Project
+                  <i data-lucide="chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <section class="our-creation">
+    <div class="our-creation-wrap">
+      <div class="our-creation-head">
+        <h2>Our Creation</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, dignissimos?</p>
+        <a class="more-info" href="#">Read More →</a>
+      </div>
+
+      <div class="creation-images-wrap">
+        <div class="first-img">
+          <img src="./assets/creation-img.png" alt="">
+          <h3>Exploration Concept</h3>
+          <p>Lorem ipsum dolor sit amet consectetur. Risus ultricies. </p>
+        </div>
+        <div class="second-image">
+          <img src="./assets/image 2.png" alt="">
+        </div>
+        <div class="third-image">
+          <img src="./assets/image-3.png" alt="">
+          <div class="third-container">
+            <h3>Lorem ipsum dolor sit amet.</h3>
+            <p>Lorem ipsum dolor sit amet consectetur. <br>Egestas arcu sem tincidunt sem velit.</p>
+            <svg class="arrow" width="87" height="106" viewBox="0 0 87 106" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M6.0109 3.06434C6.04643 1.40787 4.7324 0.0362234 3.07593 0.000689983C1.41945 -0.0348434 0.047812 1.27919 0.0122788 2.93566L6.0109 3.06434ZM85.734 89.4481C87.0861 88.4904 87.4058 86.618 86.4481 85.266L70.8417 63.2332C69.8841 61.8812 68.0117 61.5615 66.6596 62.5192C65.3076 63.4768 64.9879 65.3492 65.9456 66.7013L79.8179 86.2859L60.2332 100.158C58.8812 101.116 58.5615 102.988 59.5192 104.34C60.4768 105.692 62.3493 106.012 63.7013 105.054L85.734 89.4481ZM0.0122788 2.93566C-0.51201 27.3766 15.7186 78.3852 83.4951 89.9572L84.5049 84.0428C20.3003 73.0807 5.53533 25.2341 6.0109 3.06434L0.0122788 2.93566Z"
+                fill="#F78129" />
+            </svg>
+
+          </div>
+        </div>
+      </div>
+  </section> -->
+  <section class="cta-section">
+    <div class="bedroom-section">
+      <div class="bedroom-image"></div>
+      <div class="text-overlay">
+        <h2>Lorem Ipsum Dolor Sit Amet</h2>
+        <a href="#" class="cta-button">Get In Touch</a>
+      </div>
+  </section>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <!-- 1) Footer Info -->
+      <div class="footer-info">
+        <h2>Wood Masters</h2>
+        <p>
+          We craft quality wooden furniture with timeless design. Our passion lies in
+          merging modern styles with the warmth of natural wood, ensuring every piece
+          fits your space and lifestyle.
+        </p>
+      </div>
+
+      <!-- 2) Footer Links -->
+      <div class="footer-links">
+        <div class="footer-column">
+          <h3>Company</h3>
+          <ul>
+            <li>About Us</li>
+            <li>Services</li>
+            <li>Jobs</li>
+            <li>Contact</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Support</h3>
+          <ul>
+            <li>Help Center</li>
+            <li>Knowledge Base</li>
+            <li>Live Chat</li>
+            <li>Warranty</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Explore</h3>
+          <ul>
+            <li>Blog</li>
+            <li>Leadership</li>
+            <li>Our Team</li>
+            <li>Store Locator</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3) Newsletter -->
+      <div class="footer-newsletter">
+        <h3>Stay in the Loop</h3>
+        <p>
+          Join our newsletter to receive the latest tips and updates on modern furniture
+          designs and interior trends.
+        </p>
+        <form class="newsletter-form" action="#" method="post">
+          <div class="newsletter-checkbox">
+            <input type="checkbox" id="subscribeCheckbox" name="subscribe" />
+            <label for="subscribeCheckbox">Subscribe to our Newsletter</label>
+          </div>
+          <input type="text" name="name" placeholder="Enter your name" required />
+          <input type="email" name="email" placeholder="Enter your e-mail" required />
+          <button type="submit"><i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="social-icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+      <div class="legal">
+        <span class="copyright">
+          &copy; 2022 Wood Masters. All Rights Reserved.
+        </span>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+  <script defer src="script.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    lucide.createIcons();
+  </script>
+
+</body>
+
+</html>
