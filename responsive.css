@@ -193,11 +193,9 @@
   }
 }
 @media (max-width: 768px) {
-  .hero-section {
-    height: auto;
-    min-height: 100vh;
-    padding: 20px env(safe-area-inset-right) 20px env(safe-area-inset-left);
-  }
+  /* .hero-section {
+    height: 100%;
+  } */
 
   .hero-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -216,6 +214,7 @@
     border-radius: 16px;
     animation-duration: 0.8s;
     flex-direction: column;
+    height: 100%;
   }
 
   .overlay-text {
