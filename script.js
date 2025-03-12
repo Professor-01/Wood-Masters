@@ -253,28 +253,104 @@
 // }, 1000);
 
 // Toggle the main navigation on hamburger click
-const hamburger = document.querySelector(".hamburger");
-const mainNav = document.querySelector(".main-nav");
+// Hamburger Toggle
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger");
+  const mainNav = document.querySelector(".main-nav");
+  const menuToggles = document.querySelectorAll(".menu-toggle");
+  const megaMenus = document.querySelectorAll(".mega-menu");
+  const menuHeadings = document.querySelectorAll(".mega-column h3");
 
-hamburger.addEventListener("click", () => {
-  mainNav.classList.toggle("active");
-});
+  // Prevent body scroll when navbar is open
+  function toggleBodyScroll(enable) {
+    if (enable) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+  }
 
-// For each menu item with a submenu, toggle its display on click in mobile view
-const menuItems = document.querySelectorAll(".main-menu > li");
-menuItems.forEach((item) => {
-  // Look for a dropdown or mega menu
-  const submenu = item.querySelector(".dropdown, .mega-menu");
-  if (submenu) {
-    const link = item.querySelector("a");
-    link.addEventListener("click", (e) => {
-      // Only apply this on mobile view
-      if (window.innerWidth <= 1024) {
-        e.preventDefault(); // Prevent navigation
-        submenu.classList.toggle("active");
-        link.classList.toggle("active"); // Rotate caret indicator
-      }
+  if (hamburger && mainNav) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      mainNav.classList.toggle("active");
+
+      // Prevent body scrolling when menu is open
+      toggleBodyScroll(mainNav.classList.contains("active"));
     });
+  }
+
+  // Toggle Mega Menu Dropdown
+  menuToggles.forEach((toggle) => {
+    toggle.addEventListener("click", function (e) {
+      e.preventDefault();
+      const megaMenu = this.nextElementSibling;
+
+      // Toggle the clicked mega menu
+      megaMenu.classList.toggle("active");
+
+      // Close other mega menus
+      megaMenus.forEach((menu) => {
+        if (menu !== megaMenu) {
+          menu.classList.remove("active");
+        }
+      });
+
+      toggleBodyScroll(isAnyMegaMenuOpen());
+    });
+  });
+
+  // Toggle individual <ul> inside the mega menu
+  menuHeadings.forEach((heading) => {
+    heading.addEventListener("click", function () {
+      const list = this.nextElementSibling;
+
+      // Close all other dropdowns
+      menuHeadings.forEach((h) => {
+        const otherList = h.nextElementSibling;
+        if (otherList !== list) {
+          otherList.classList.remove("open");
+        }
+      });
+
+      // Toggle the clicked dropdown
+      list.classList.toggle("open");
+
+      toggleBodyScroll(isAnyMegaMenuOpen());
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", function (e) {
+    if (!e.target.closest(".main-nav")) {
+      megaMenus.forEach((menu) => menu.classList.remove("active"));
+      document
+        .querySelectorAll(".mega-column ul")
+        .forEach((ul) => ul.classList.remove("open"));
+      toggleBodyScroll(false);
+    }
+  });
+
+  // Allow scrolling inside the mega menu while preventing background scroll
+  megaMenus.forEach((menu) => {
+    menu.addEventListener("wheel", (e) => e.stopPropagation());
+    menu.addEventListener("touchmove", (e) => e.stopPropagation());
+  });
+
+  // Enable scrolling inside the navbar
+  if (mainNav) {
+    mainNav.addEventListener("wheel", (e) => e.stopPropagation());
+    mainNav.addEventListener("touchmove", (e) => e.stopPropagation());
+  }
+
+  // Check if any dropdown is open
+  function isAnyMegaMenuOpen() {
+    return (
+      [...megaMenus].some((menu) => menu.classList.contains("active")) ||
+      [...document.querySelectorAll(".mega-column ul")].some((ul) =>
+        ul.classList.contains("open")
+      )
+    );
   }
 });
 
